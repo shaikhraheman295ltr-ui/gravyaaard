@@ -97,7 +97,7 @@
       'wide', 'wide',
       'square', 'square', 'square', 'square',
       'wide', 'square', 'square',
-      'tall', 'square', 'square', 'square'
+      'square', 'square', 'square', 'square'
     ];
 
     images.forEach(function (img, i) {
