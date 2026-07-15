@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify - Gravyaaard | Death Certificate Verification</title>
+  <meta name="description" content="Submit and verify death certificates online for cremation and burial services in Latur.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-icon">&#x2625;</span>
+      Gravyaaard
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="maps.html">Maps</a>
+      <a href="quotation.html">Quotation</a>
+      <a href="customer-details.html" class="active">Verify</a>
+      <a href="customer-details.html" class="nav-cta">Book Now</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="customer-page section">
+    <div class="section-header">
+      <div class="section-tag">Verification</div>
+      <h2 class="section-title">Death Certificate Verification</h2>
+      <p class="section-subtitle">Submit details of the deceased for verification. This helps us process your service request smoothly.</p>
+    </div>
+
+    <div class="form-container">
+      <div class="form-progress" id="formProgress">
+        <div class="step active" data-step="1">
+          <div class="step-circle">1</div>
+          <span class="step-label">Personal Info</span>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-circle">2</div>
+          <span class="step-label">Deceased Details</span>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-circle">3</div>
+          <span class="step-label">Upload Certificate</span>
+        </div>
+        <div class="step" data-step="4">
+          <div class="step-circle">4</div>
+          <span class="step-label">Confirm &amp; Submit</span>
+        </div>
+      </div>
+
+      <form id="verificationForm" novalidate>
+        <div class="form-step active" data-step="1">
+          <h2>Your Information</h2>
+          <p>Please provide your contact details as the person submitting this request.</p>
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="relation">Relationship to Deceased <span class="required">*</span></label>
+            <select id="relation" class="form-control" required>
+              <option value="">Select relationship...</option>
+              <option>Son / Daughter</option>
+              <option>Spouse</option>
+              <option>Parent</option>
+              <option>Sibling</option>
+              <option>Grandchild</option>
+              <option>Relative</option>
+              <option>Friend</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <div></div>
+            <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next Step &rarr;</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2">
+          <h2>Deceased Person's Details</h2>
+          <p>Enter the details of the deceased person as they appear on the death certificate.</p>
+          <div class="form-group">
+            <label for="deceasedName">Full Name of Deceased <span class="required">*</span></label>
+            <input type="text" id="deceasedName" class="form-control" placeholder="Full name as on certificate" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fatherName">Father's / Spouse's Name <span class="required">*</span></label>
+              <input type="text" id="fatherName" class="form-control" placeholder="Father or spouse name" required>
+            </div>
+            <div class="form-group">
+              <label for="age">Age at Death <span class="required">*</span></label>
+              <input type="number" id="age" class="form-control" placeholder="Age in years" min="0" max="150" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gender">Gender <span class="required">*</span></label>
+              <select id="gender" class="form-control" required>
+                <option value="">Select...</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="religion">Religion <span class="required">*</span></label>
+              <select id="religion" class="form-control" required>
+                <option value="">Select religion...</option>
+                <option>Hindu</option>
+                <option>Muslim</option>
+                <option>Christian</option>
+                <option>Sikh</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Residential Address <span class="required">*</span></label>
+            <textarea id="address" class="form-control" placeholder="Complete address of the deceased" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dateOfDeath">Date of Death <span class="required">*</span></label>
+            <input type="date" id="dateOfDeath" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="placeOfDeath">Place of Death <span class="required">*</span></label>
+            <input type="text" id="placeOfDeath" class="form-control" placeholder="e.g., Home, Hospital name, etc." required>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" onclick="prevStep(1)">&larr; Previous</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next Step &rarr;</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3">
+          <h2>Upload Death Certificate</h2>
+          <p>Upload a clear photo or scan of the death certificate. We accept JPG, PNG, and PDF files (max 5 MB).</p>
+          <div class="file-upload" id="fileUploadArea">
+            <div class="upload-icon">&#x1F4C4;</div>
+            <p><strong>Click to upload</strong> or drag and drop</p>
+            <p class="supported">Supported: JPG, PNG, PDF (max 5 MB)</p>
+            <input type="file" id="certificateFile" accept=".jpg,.jpeg,.png,.pdf" required>
+          </div>
+          <div id="filePreview" style="display:none;"></div>
+          <div class="form-group" style="margin-top:1.5rem;">
+            <label for="certificateNumber">Certificate Registration Number (if available)</label>
+            <input type="text" id="certificateNumber" class="form-control" placeholder="Registration number on certificate">
+          </div>
+          <div class="form-group">
+            <label for="issuingAuthority">Issuing Authority</label>
+            <input type="text" id="issuingAuthority" class="form-control" placeholder="e.g., Latur Municipal Corporation">
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" onclick="prevStep(2)">&larr; Previous</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next Step &rarr;</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="4">
+          <h2>Confirm &amp; Submit</h2>
+          <p>Please review all details before submitting. Once verified, you will receive a confirmation.</p>
+          <div class="verification-details" id="reviewDetails" style="margin-bottom:2rem;"></div>
+          <div class="form-group">
+            <label style="display:flex;align-items:flex-start;gap:0.75rem;cursor:pointer;">
+              <input type="checkbox" id="agreeTerms" style="margin-top:3px;accent-color:var(--accent-gold);" required>
+              <span style="font-size:0.85rem;color:var(--text-secondary);">I confirm that all the information provided above is true and correct to the best of my knowledge. I understand that this information will be used for verification purposes.</span>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" onclick="prevStep(3)">&larr; Previous</button>
+            <button type="submit" class="btn btn-primary">&#x2713; Submit for Verification</button>
+          </div>
+        </div>
+      </form>
+
+      <div id="successMessage" style="display:none;">
+        <div class="verification-success">
+          <div class="success-icon">&#x2713;</div>
+          <h2>Verification Submitted Successfully!</h2>
+          <p>Your details have been received. Our team will verify the certificate and get back to you within 24 hours.</p>
+          <div class="verification-details">
+            <div class="detail-row">
+              <span class="detail-label">Verification ID</span>
+              <span class="detail-value" id="verificationId">GRV-2024-XXXXX</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Status</span>
+              <span class="detail-value" style="color:#22c55e;">Pending Verification</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Expected Response</span>
+              <span class="detail-value">Within 24 hours</span>
+            </div>
+          </div>
+          <br>
+          <a href="index.html" class="btn btn-outline">&larr; Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>&#x2625; Gravyaaard</h4>
+        <p>Complete directory for Shamshan Ghat and Kabristaan locations in Latur city.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="maps.html">Maps &amp; Locations</a><br>
+        <a href="quotation.html">Pricing &amp; Quotation</a><br>
+        <a href="customer-details.html">Death Certificate Verification</a><br>
+        <a href="index.html#gallery">Gallery</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Latur, Maharashtra 413512</p>
+        <p class="emergency">&#x1F6A8; Emergency: +91 98765 43210</p>
+        <p>&#x1F4DE; +91 87654 32109</p>
+        <p>&#x1F4E7; info@gravyaaard.in</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>All facilities: 24/7</p>
+        <p>Office: 6:00 AM - 10:00 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Gravyaaard. All rights reserved. &middot; Serving Latur with compassion.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

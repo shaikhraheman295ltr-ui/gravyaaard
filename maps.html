@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps - Gravyaaard | Latur Locations</title>
+  <meta name="description" content="Find all Shamshan Ghat and Kabristaan locations in Latur city on Google Maps with directions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-icon">&#x2625;</span>
+      Gravyaaard
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="maps.html" class="active">Maps</a>
+      <a href="quotation.html">Quotation</a>
+      <a href="customer-details.html">Verify</a>
+      <a href="customer-details.html" class="nav-cta">Book Now</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="map-page">
+    <div class="map-sidebar">
+      <h2>Locations</h2>
+      <p class="subtitle">Click on a location to view on map</p>
+      <div class="location-list" id="locationList">
+        <div class="location-item active" data-id="0">
+          <div class="pin muslim"></div>
+          <div class="info">
+            <h4>Kabristaan - Peer Haji</h4>
+            <p>Peer Haji Road, Latur</p>
+            <span class="type-badge muslim">Muslim</span>
+          </div>
+        </div>
+        <div class="location-item" data-id="1">
+          <div class="pin muslim"></div>
+          <div class="info">
+            <h4>Kabristaan - Barshi Road</h4>
+            <p>Barshi Road, Latur</p>
+            <span class="type-badge muslim">Muslim</span>
+          </div>
+        </div>
+        <div class="location-item" data-id="2">
+          <div class="pin hindu"></div>
+          <div class="info">
+            <h4>Shamshan Ghat - Main</h4>
+            <p>Old City, Latur</p>
+            <span class="type-badge hindu">Hindu</span>
+          </div>
+        </div>
+        <div class="location-item" data-id="3">
+          <div class="pin hindu"></div>
+          <div class="info">
+            <h4>Shamshan Ghat - Ausa Road</h4>
+            <p>Ausa Road, Latur</p>
+            <span class="type-badge hindu">Hindu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/maps.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0VpKdouu5JbzLHCIlA7k_e9s6T6F15Xw&callback=initMap"></script>
+</body>
+</html>
