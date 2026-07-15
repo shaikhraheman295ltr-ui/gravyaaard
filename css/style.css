@@ -133,11 +133,14 @@ body {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .hero-video {
-  width: 50%;
-  height: 100%;
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 50%;
+  max-height: 100%;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1.5s ease;
@@ -549,8 +552,8 @@ img {
 /* Services / Locations Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -636,8 +639,8 @@ img {
 /* Gallery */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -783,8 +786,8 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto 3rem;
 }
@@ -1372,7 +1375,66 @@ select.form-control {
 
   .hero {
     min-height: auto;
-    padding: 6rem 1.5rem 3rem;
+    padding: 5rem 1rem 2.5rem;
+  }
+
+  .hero-video {
+    flex: 1 1 100%;
+    min-height: 50%;
+    max-height: 50%;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.82rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .map-sidebar {
+    padding: 1.2rem;
+  }
+
+  .quotation-page {
+    padding: 5rem 1rem 3rem;
+  }
+
+  .customer-page {
+    padding: 5rem 1rem 3rem;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .total-calc {
+    padding: 1.2rem;
   }
 
   .hero-stats {
@@ -1403,16 +1465,72 @@ select.form-control {
 }
 
 @media (max-width: 480px) {
-  .section {
-    padding: 4rem 1rem;
+  .navbar {
+    padding: 0.6rem 0.8rem;
+  }
+  .navbar.scrolled {
+    padding: 0.5rem 0.8rem;
+  }
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+  .nav-logo-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
   }
   .hero {
-    padding: 5rem 1rem 3rem;
+    padding: 4.5rem 0.8rem 2rem;
   }
-  .navbar {
-    padding: 0.7rem 1rem;
+  .hero-title {
+    font-size: clamp(1.6rem, 10vw, 2.2rem);
+  }
+  .hero-subtitle {
+    font-size: 0.82rem;
   }
   .hero-stats {
-    gap: 1.2rem;
+    gap: 0.8rem;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  .stat-label {
+    font-size: 0.6rem;
+  }
+  .section {
+    padding: 3rem 0.8rem;
+  }
+  .section-title {
+    font-size: clamp(1.3rem, 7vw, 1.7rem);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.4rem;
+  }
+  .service-card {
+    padding: 1.2rem;
+  }
+  .service-card h3 {
+    font-size: 1rem;
+  }
+  .service-card p {
+    font-size: 0.78rem;
+  }
+  .pricing-category h3 {
+    font-size: 1rem;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  .form-step h2 {
+    font-size: 1.2rem;
+  }
+  .form-step > p {
+    font-size: 0.78rem;
+  }
+  #map {
+    height: 50vh;
   }
 }
