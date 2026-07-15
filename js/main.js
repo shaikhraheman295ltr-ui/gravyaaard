@@ -92,9 +92,13 @@
       );
     }
 
-    images.forEach(function (img) {
+    var sizes = ['featured', 'square', 'wide', 'tall', 'square', 'square', 'wide', 'square', 'tall', 'square', 'square', 'square', 'square', 'square', 'square', 'square'];
+
+    images.forEach(function (img, i) {
       var div = document.createElement('div');
-      div.className = 'gallery-item';
+      var cls = 'gallery-item';
+      if (sizes[i]) cls += ' ' + sizes[i];
+      div.className = cls;
       div.style.background = img.type === 'muslim' ? '#1a2a1a' : '#2a1a1a';
       var fallback = makePlaceholder(img.label, img.type);
       div.innerHTML = '<img src="' + img.src + '" alt="' + img.label + '" loading="lazy" onerror="this.src=\'' + fallback + '\';this.style.opacity=\'0.7\'" style="width:100%;height:100%;object-fit:cover;">' +
