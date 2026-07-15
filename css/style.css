@@ -640,6 +640,7 @@ img {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
   gap: 0.6rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -1535,6 +1536,11 @@ select.form-control {
   .gallery-item.featured,
   .gallery-item.wide {
     grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 1;
+  }
+
+  .gallery-item.tall {
     grid-row: span 1;
     aspect-ratio: 1;
   }

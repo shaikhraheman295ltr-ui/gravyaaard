@@ -92,7 +92,13 @@
       );
     }
 
-    var sizes = ['featured', 'square', 'wide', 'tall', 'square', 'square', 'wide', 'square', 'tall', 'square', 'square', 'square', 'square', 'square', 'square', 'square'];
+    var sizes = [
+      'featured', 'tall', 'tall',
+      'wide', 'wide',
+      'square', 'square', 'square', 'square',
+      'wide', 'square', 'square',
+      'tall', 'square', 'square', 'square'
+    ];
 
     images.forEach(function (img, i) {
       var div = document.createElement('div');
