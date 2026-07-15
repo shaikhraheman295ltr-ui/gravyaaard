@@ -92,13 +92,14 @@
       );
     }
 
-    var sizes = [
-      'featured', 'tall', 'tall',
-      'wide', 'wide',
-      'square', 'square', 'square', 'square',
-      'wide', 'square', 'square',
-      'square', 'square', 'square', 'square'
-    ];
+    var roleIdx = [3, 7, 11, 0, 9, 5, 1, 2, 4, 6, 8, 10, 12, 13, 14, 15];
+    var roleMap = {};
+    var pattern = ['featured', 'tall', 'tall', 'wide', 'wide', 'square', 'square', 'square', 'square', 'wide', 'square', 'square', 'square', 'square', 'square', 'square'];
+    roleIdx.forEach(function (origIdx, i) {
+      roleMap[origIdx] = pattern[i];
+    });
+    var sizes = [];
+    for (var i = 0; i < 16; i++) sizes.push(roleMap[i] || 'square');
 
     images.forEach(function (img, i) {
       var div = document.createElement('div');
