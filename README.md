@@ -11,12 +11,24 @@
 </p>
 
 <p align="center">
+  <a href="https://gravyaaard.vercel.app">
+    <img src="https://img.shields.io/badge/🌐-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white&labelColor=c9a84c" alt="Live Demo">
+  </a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/Platform-Web-blue?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/License-Proprietary-orange?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/Made_With-HTML%20%7C%20CSS%20%7C%20JS-yellow?style=flat-square" alt="Tech">
   <img src="https://img.shields.io/badge/Location-Latur%2C%20MH-informational?style=flat-square" alt="Location">
 </p>
+
+---
+
+## 🚀 Live Demo
+
+[**gravyaaard.vercel.app**](https://gravyaaard.vercel.app) — Click to view the live site.
 
 ---
 
