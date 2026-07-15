@@ -108,7 +108,7 @@
       div.className = cls;
       div.style.background = img.type === 'muslim' ? '#1a2a1a' : '#2a1a1a';
       var fallback = makePlaceholder(img.label, img.type);
-      div.innerHTML = '<img src="' + img.src + '" alt="' + img.label + '" loading="lazy" onerror="this.src=\'' + fallback + '\';this.style.opacity=\'0.7\'" style="width:100%;height:100%;object-fit:cover;">' +
+      div.innerHTML = '<img src="' + img.src + '" alt="' + img.label + '" loading="lazy" onerror="this.src=\'' + fallback + '\';this.style.opacity=\'0.7\'">' +
         '<div class="gallery-overlay"><span class="gallery-label">' + img.label + '</span></div>';
       galleryGrid.appendChild(div);
     });

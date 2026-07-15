@@ -650,25 +650,50 @@ img {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
-  aspect-ratio: 1;
   cursor: pointer;
   border: 1px solid var(--border-glass);
   transition: var(--transition);
+  background: var(--bg-card);
+}
+
+.gallery-item::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
 }
 
 .gallery-item.featured {
   grid-column: span 2;
   grid-row: span 2;
-  aspect-ratio: auto;
+}
+
+.gallery-item.featured::before {
+  padding-bottom: 100%;
 }
 
 .gallery-item.wide {
   grid-column: span 2;
-  aspect-ratio: 2/1;
+}
+
+.gallery-item.wide::before {
+  padding-bottom: 50%;
 }
 
 .gallery-item.tall {
   grid-row: span 2;
+}
+
+.gallery-item.tall::before {
+  padding-bottom: 200%;
+}
+
+.gallery-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
 }
 
 .gallery-item:hover {
@@ -1432,6 +1457,14 @@ select.form-control {
     grid-column: span 2;
   }
 
+  .gallery-item.tall {
+    grid-row: span 2;
+  }
+
+  .gallery-item.tall::before {
+    padding-bottom: 200%;
+  }
+
   .section {
     padding: 4rem 1rem;
   }
@@ -1537,12 +1570,19 @@ select.form-control {
   .gallery-item.wide {
     grid-column: span 2;
     grid-row: span 1;
-    aspect-ratio: 1;
+  }
+
+  .gallery-item.featured::before,
+  .gallery-item.wide::before {
+    padding-bottom: 100%;
   }
 
   .gallery-item.tall {
     grid-row: span 1;
-    aspect-ratio: 1;
+  }
+
+  .gallery-item.tall::before {
+    padding-bottom: 100%;
   }
   .service-card {
     padding: 1.2rem;
